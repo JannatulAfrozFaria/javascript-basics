@@ -8,6 +8,31 @@
   </head>
   <body>
     <div id="root"></div>
+    <h1>Use of Event Handlers</h1>
+    <div>
+      <button id="myButton">Add Event Listner!</button>
+      <button id="removeListener">Remove listener</button>
+    </div>
+    <script>
+      //select elements
+      const button = document.getElementById('myButton');
+      const removeButton = document.getElementById('removeListener');
+
+      //define a callback function
+      function handleClick(){
+        alert('Button was clicked');
+        console.log('button was clicked')
+      }
+      //add event listener
+      button.addEventListener('click',handleClick);
+
+      //remove event listener
+      removeButton.addEventListener('click', ()=>{
+        button.removeEventListener('click',handleClick);
+        alert('Event Listener removed');
+        console.log('event listener removed')
+      } )
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
